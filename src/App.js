@@ -1,6 +1,6 @@
 import { ghostAtom, evidenceAtom } from "./Atom"
 import { useRecoilValue} from "recoil"
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import './App.css';
 import GhostComponent from "./components/GhostComponent";
 
@@ -20,11 +20,12 @@ function App() {
  
     let remaining = Array.from(new Set(posGhosts.map(x => x.evidence).flat()))
     // finds all possible remaining evidence
-    let temp = remaining.filter(x=> {
+    let temp = remaining.map(x=> {
       if (!foundEvidence.includes(x) && x !==newEv){
         return x
       }
-    })
+      return null
+    }).flat()
     // removes evidence from evidence pool
     console.log(temp)
     setPossibleEv(temp)
@@ -43,7 +44,7 @@ function App() {
       </div>
       <div>
         <h3>Possible Evidence</h3>
-        {possibleEv.map(ev => <div onClick={handleEvidence} key={ev}>{ev}</div>)}
+        {possibleEv.map((ev,i) => <div onClick={handleEvidence} key={`${ev}${i}`}>{ev}</div>)}
       </div>
       <div>
         <h3>Possible Ghosts</h3>
