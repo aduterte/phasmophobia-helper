@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { ghostAtom, evidenceAtom } from "./Atom"
+import { useRecoilValue} from "recoil"
+import React, {useState, useEffect} from "react"
 import './App.css';
+import GhostComponent from "./components/GhostComponent";
 
 function App() {
+
+  const ghosts = useRecoilValue(ghostAtom),
+    evidence = useRecoilValue(evidenceAtom),
+    [foundEvidence, setFoundEvidence] = useState([]),
+    [possibleGhosts, setPossibleGhosts] = useState(ghosts),
+    [possibeEv, setPossibleEv] = useState(evidence)
+
+  function handleEvidence(e){
+    let newEv = e.target.innerText
+    setFoundEvidence([...foundEvidence, newEv])
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        {foundEvidence.map(f => <div key={f}>{f}</div>)}
+      </div>
+      <div>
+        {evidence.map(ev => <div onClick={handleEvidence} key={ev}>{ev}</div>)}
+      </div>
+      <div>
+        {possibleGhosts.map(ghost=> <GhostComponent key={ghost.name} ghost={ghost}/>)}
+      </div>
     </div>
   );
 }
