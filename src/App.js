@@ -38,7 +38,7 @@ function App() {
   
   return (
     <div className="App">
-      <div>
+      <div className="container">
         <h3>Found Evidence</h3>
         <div className="possible-evidence-container">
         {foundEvidence.map(f => <div className="possible-evidence" key={f}>{f}</div>)}

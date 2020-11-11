@@ -1,3 +1,6 @@
+html body {
+  background: black;
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -62,7 +65,7 @@
 }
 
 .possible-evidence-container {
-  width: 50vw;
+  width: 90vw;
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-between; */
@@ -79,4 +82,11 @@
   height: 50px;
   padding: 10px 10px;
   font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
