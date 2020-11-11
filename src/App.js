@@ -46,9 +46,12 @@ function App() {
         <h3>Possible Evidence</h3>
         {possibleEv.map((ev,i) => <div onClick={handleEvidence} key={`${ev}${i}`}>{ev}</div>)}
       </div>
-      <div>
+      <div >
         <h3>Possible Ghosts</h3>
-        {possibleGhosts.map(ghost=> <GhostComponent key={ghost.name} ghost={ghost}/>)}
+        <div className="possible-ghost-container">
+          {possibleGhosts.map(ghost=> <GhostComponent key={ghost.name} ghost={ghost}/>)}
+        </div>
+        
       </div>
     </div>
   );
