@@ -1,7 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   color: white;
   background: black;
@@ -59,4 +59,24 @@
   padding: 10px;
   border-radius: 15px;
   background-image: url("https://i.pinimg.com/originals/22/ae/09/22ae093116adbe16da815108eeb535aa.jpg");
+}
+
+.possible-evidence-container {
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+.possible-evidence {
+  /* width: 400px; */
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(47, 90, 128);
+  margin: 10px;
+  height: 50px;
+  padding: 10px 10px;
+  font-weight: bold;
 }

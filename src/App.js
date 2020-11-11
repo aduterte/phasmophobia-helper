@@ -25,7 +25,7 @@ function App() {
         return x
       }
       return null
-    }).flat()
+    }).flat().filter(x=> x !== null)
     // removes evidence from evidence pool
     console.log(temp)
     setPossibleEv(temp)
@@ -40,13 +40,17 @@ function App() {
     <div className="App">
       <div>
         <h3>Found Evidence</h3>
-        {foundEvidence.map(f => <div key={f}>{f}</div>)}
+        <div className="possible-evidence-container">
+        {foundEvidence.map(f => <div className="possible-evidence" key={f}>{f}</div>)}
+        </div>
       </div>
-      <div>
+      <div className="container">
         <h3>Possible Evidence</h3>
-        {possibleEv.map((ev,i) => <div onClick={handleEvidence} key={`${ev}${i}`}>{ev}</div>)}
+        <div className="possible-evidence-container">
+          {possibleEv.map((ev,i) => <div className="possible-evidence" onClick={handleEvidence} key={`${ev}${i}`}>{ev}</div>)}
+        </div>
       </div>
-      <div >
+      <div className="container">
         <h3>Possible Ghosts</h3>
         <div className="possible-ghost-container">
           {possibleGhosts.map(ghost=> <GhostComponent key={ghost.name} ghost={ghost}/>)}
