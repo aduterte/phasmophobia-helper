@@ -34,7 +34,7 @@ function App() {
     // temp = possibleEv.filter(x=> x !== newEv)
     // console.log(temp)
     // setPossibleEv(temp)
-    // testing aliases
+    // testing 2
   }
   
   return (
