@@ -29,12 +29,7 @@ function App() {
     // removes evidence from evidence pool
     console.log(temp)
     setPossibleEv(temp)
-    // 
-    // console.log(temp)
-    // temp = possibleEv.filter(x=> x !== newEv)
-    // console.log(temp)
-    // setPossibleEv(temp)
-    // testing 2
+   
   }
   
   return (
