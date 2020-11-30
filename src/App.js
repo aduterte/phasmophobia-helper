@@ -31,6 +31,10 @@ function App() {
     setPossibleEv(temp)
    
   }
+
+  function removeEvidence(e){
+    
+  }
   
   return (
     <div className="App">
