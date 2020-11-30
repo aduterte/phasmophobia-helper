@@ -44,6 +44,7 @@ function App() {
         <h3>Possible Evidence</h3>
         <div className="possible-evidence-container">
           {possibleEv.map((ev,i) => <div className="possible-evidence" onClick={handleEvidence} key={`${ev}${i}`}>{ev}</div>)}
+          {/* {possibleEv.map((ev,i) => <EvidenceComponent key={})} */}
         </div>
       </div>
       <div className="container">
