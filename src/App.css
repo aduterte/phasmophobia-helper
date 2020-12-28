@@ -92,4 +92,6 @@ html body {
   align-items: center;
 }
 
-
+.nav-bar {
+  background-color: grey;
+}

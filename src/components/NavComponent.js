@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function(){
     return(
-        <div>
+        <div className="nav-bar">
             <div>
                 Maps
             </div>
